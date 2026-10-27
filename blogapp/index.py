@@ -173,7 +173,7 @@ def register_routers(app):
                 login_user(user=user)
                 next = request.args.get('next')
                 return redirect(next if next else '/')
-
+            print('Sai tên đăng nhập hoặc mật khẩu!')
             return render_template('login.html', err_msg='Sai tên đăng nhập hoặc mật khẩu!')
 
         return render_template('login.html')
@@ -237,9 +237,9 @@ def register_routers(app):
                     image = None
                 image.seek(0)
 
-            dao.add_post(title=title, content=content, user_id=current_user.id, image=image)
+            post, _ , msg = dao.add_post(title=title, content=content, user_id=current_user.id, image=image)
 
-            return jsonify({'status': 200, 'msg': 'Đăng bài viết thành công'})
+            return jsonify({'status': 200, 'id': post.id, 'msg': msg})
 
         except ValueError as ex:
             return jsonify({'status': 400, 'err_msg': str(ex)})

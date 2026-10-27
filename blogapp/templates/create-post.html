@@ -11,12 +11,12 @@
 
 <form method="post" action="/create-post" enctype="multipart/form-data">
     <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="title" placeholder="Tiêu đề bài viết" name="title" required minlength="10" maxlength="200"/>
+        <input type="text" class="form-control" id="title" placeholder="Tiêu đề bài viết" name="title" required minlength="10" maxlength="300"/>
         <label for="title">Tiêu đề bài viết (10-200 ký tự)</label>
     </div>
 
     <div class="form-floating mb-3 mt-3">
-        <textarea class="form-control" id="content" placeholder="Nội dung bài viết" name="content" style="height: 300px;" required minlength="50" maxlength="5000"></textarea>
+        <textarea class="form-control" id="content" placeholder="Nội dung bài viết" name="content" style="height: 300px;" required minlength="50" maxlength="50000"></textarea>
         <label for="content">Nội dung bài viết (50-5000 ký tự)</label>
     </div>
 

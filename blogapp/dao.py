@@ -121,7 +121,7 @@ def add_post(title, content, user_id, image=None):
     db.session.add(post)
     try:
         db.session.commit()
-        return True, "Đăng bài viết thành công"
+        return post, True, "Đăng bài viết thành công"
     except Exception as e:
         db.session.rollback()
         raise Exception("Lỗi hệ thống: " + str(e))
